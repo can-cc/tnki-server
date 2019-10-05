@@ -2,16 +2,9 @@ package com.chenfangwei.tnki.auth.repository;
 
 import com.chenfangwei.tnki.auth.model.User;
 import com.chenfangwei.tnki.share.model.BaseRepository;
-
-import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
 
-import java.util.Map;
-
-import static com.google.common.collect.ImmutableMap.of;
-
+@Component
 public class UserRepository extends BaseRepository<User> {
 
     public UserRepository() {
@@ -25,5 +18,12 @@ public class UserRepository extends BaseRepository<User> {
 
     }
 
+    public User findByUsername(String username) {
+        User user = new User();
+        user.setID("U001");
+        user.setUsername("Linus");;
+        user.setPassword("P123456");
+        return user;
+    }
 
 }

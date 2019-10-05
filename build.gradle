@@ -1,26 +1,41 @@
 plugins {
-    id 'org.springframework.boot' version '2.1.6.RELEASE'
     id 'java'
+    id 'org.springframework.boot' version '2.1.6.RELEASE'
     id "io.freefair.lombok" version "4.1.2"
 }
-
 apply plugin: 'io.spring.dependency-management'
 
 group = 'com.chenfangwei'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+
 repositories {
     mavenCentral()
 }
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
 
 dependencies {
     implementation 'com.google.guava:guava:28.1-jre'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-tomcat'
     implementation 'javax.inject:javax.inject:1'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.projectreactor:reactor-test'

@@ -1,6 +1,5 @@
 package com.chenfangwei.tnki.share.model;
 
-
 import com.chenfangwei.tnki.share.event.DomainEventDao;
 
 import javax.inject.Inject;

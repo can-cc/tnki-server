@@ -5,17 +5,17 @@ import com.chenfangwei.tnki.share.model.BaseAggregate;
 import java.util.Set;
 
 public class User extends BaseAggregate {
-    private Long ID;
+    private String ID;
 
     private String username;
 
     private String password;
 
-    public Long getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setId(Long id) {
+    public void setID(String id) {
         this.ID = ID;
     }
 
