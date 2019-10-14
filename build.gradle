@@ -31,8 +31,11 @@ dependencies {
     implementation 'com.google.guava:guava:28.1-jre'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
     implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'javax.inject:javax.inject:1'
+    implementation 'javax:javaee-api:7.0'
+    implementation 'org.springframework:spring-jdbc'
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+    implementation 'mysql:mysql-connector-java'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
